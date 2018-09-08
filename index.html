@@ -61,7 +61,13 @@
       <h5>{{consumedCalories()}}カロリー消費するには？</h5>
       <div class="row no-gutters">
         <div class="col-6" v-for="work in workList()">
-          <work-card :name="work.name" :image="work.image" :mets="work.mets" :weight="weight()" :consumed-calories="consumedCalories()"></work-card>
+          <work-card
+            :name="work.name"
+            :image="work.image"
+            :mets="work.mets"
+            :weight="weight()"
+            :consumed-calories="consumedCalories()">
+          </work-card>
         </div>
       </div>
     </div>
