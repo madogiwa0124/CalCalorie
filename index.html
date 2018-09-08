@@ -41,7 +41,7 @@
             </div>
           </div>
           <div class="form-row form-group">
-            <span>基礎代謝：{{BasalMetabolism()}}カロリー</span>
+            <span>基礎代謝：{{getBasalMetabolism()}}カロリー</span>
           </div>
           <div class="form-row form-group">
             <input type="number" class="form-control" placeholder="今日の摂取カロリー" v-model="intakeCalorie">
@@ -50,8 +50,8 @@
       </div>
     </div>
     <br>
-    <div>
-      <h5>消費するには？</h5>
+    <div id="body-result">
+      <h5>{{consumedCalories()}}カロリー消費するには？</h5>
       <div class="row no-gutters">
         <div class="col-6">
           <div class="card">

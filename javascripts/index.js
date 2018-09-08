@@ -5,7 +5,8 @@ let bodyForm = new Vue({
     age: null,
     height: null,
     weight: null,
-    intakeCalorie: null
+    intakeCalorie: null,
+    basalMetabolism: 0,
   },
   methods: {
     // ハリス・ベネディクト方程式(改良版)で基礎代謝を計算
@@ -19,9 +20,19 @@ let bodyForm = new Vue({
         return 13.397 * this.weight + 4.799 * this.height - 5.677 * this.age + 88.362
       }
     },
-    BasalMetabolism: function () {
+    getBasalMetabolism: function () {
       result = this.calcBasalMetabolism()
-      return Math.round(result)
+      this.basalMetabolism = Math.round(result)
+      return this.basalMetabolism
+    }
+  }
+})
+
+let bodyResult = new Vue({
+  el: '#body-result',
+  methods: {
+    consumedCalories: function () {
+      return bodyForm.intakeCalorie - bodyForm.basalMetabolism
     }
   }
 })
