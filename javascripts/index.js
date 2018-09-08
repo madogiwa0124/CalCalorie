@@ -8,7 +8,31 @@ let bodyForm = new Vue({
     intakeCalorie: null,
     basalMetabolism: 0,
   },
+  watch: {
+    basalMetabolism: function () {
+      localStorage.setItem('bodyForm', this.valusJson())
+    },
+    intakeCalorie: function () {
+      localStorage.setItem('bodyForm', this.valusJson())
+    }
+  },
+  created: function () {
+    let values = JSON.parse(localStorage.getItem('bodyForm'))
+    for (key in values) {
+      eval(`this.${key} = values.${key}`)
+    }
+  },
   methods: {
+    valusJson: function () {
+      return JSON.stringify({
+        sex: this.sex,
+        age: this.age,
+        height: this.height,
+        weight: this.weight,
+        intakeCalorie: this.intakeCalorie,
+        basalMetabolism: this.basalMetabolism
+      })
+    },
     // ハリス・ベネディクト方程式(改良版)で基礎代謝を計算
     // 参考：https://keisan.casio.jp/exec/system/1161228736
     calcBasalMetabolism: function () {
