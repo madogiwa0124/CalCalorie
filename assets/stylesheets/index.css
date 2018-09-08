@@ -1,0 +1,10 @@
+h1.title {
+  text-align: center;
+  background-color: pink;
+  color: white;
+}
+
+div.card-header{
+  text-align: center;
+  background-color: #FEECF3
+}
