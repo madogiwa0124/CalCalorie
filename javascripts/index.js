@@ -64,10 +64,10 @@ let bodyResult = new Vue({
     // http://www.nibiohn.go.jp/files/2011mets.pdf
     workList: function () {
       return [
-        { name: '散歩',     mets: 3.5, image: 'assets/images/walking.jpg' },
-        { name: '自転車',     mets: 4.0, image: 'assets/images/cycle.jpg' },
+        { name: '散歩',   mets: 3.5, image: 'assets/images/walking.jpg' },
+        { name: '自転車', mets: 4.0, image: 'assets/images/cycle.jpg' },
         { name: '筋トレ', mets: 2.8, image: 'assets/images/kintore.jpg' },
-        { name: 'ヨガ',             mets: 3.0, image: 'assets/images/yoga.jpg' },
+        { name: 'ヨガ',   mets: 3.0, image: 'assets/images/yoga.jpg' },
       ]
     },
   }
